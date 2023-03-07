@@ -4,7 +4,7 @@ project:
 book:
   title: "Building Composite Indicators in R"
   author: "William Becker"
-  date: "06/03/2023"
+  date: 2023-03-07
   chapters:
     - index.qmd
     - intro.qmd

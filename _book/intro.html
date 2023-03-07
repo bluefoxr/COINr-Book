@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Building Composite Indicators in R - 1&nbsp; Introduction</title>
+<title>Building Composite Indicators in R - 1&nbsp; Foundations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,88 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
-}
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
 }
 </style>
 
@@ -152,7 +70,7 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Foundations</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -177,12 +95,12 @@ div.csl-indent {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Preface</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Welcome</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Foundations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -200,14 +118,24 @@ div.csl-indent {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#indicators" id="toc-indicators" class="nav-link active" data-scroll-target="#indicators"><span class="toc-section-number">1.1</span>  Indicators</a></li>
+  <li><a href="#direct-and-indirect-measures" id="toc-direct-and-indirect-measures" class="nav-link" data-scroll-target="#direct-and-indirect-measures"><span class="toc-section-number">1.2</span>  Direct and indirect measures</a></li>
+  <li><a href="#multidimensionality" id="toc-multidimensionality" class="nav-link" data-scroll-target="#multidimensionality"><span class="toc-section-number">1.3</span>  Multidimensionality</a></li>
+  <li><a href="#composite-indicators" id="toc-composite-indicators" class="nav-link" data-scroll-target="#composite-indicators"><span class="toc-section-number">1.4</span>  Composite indicators</a></li>
+  <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up"><span class="toc-section-number">1.5</span>  Wrapping up</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Foundations</span></h1>
 </div>
 
 
@@ -222,21 +150,55 @@ div.csl-indent {
 
 </header>
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<ul>
+<li>What are indicators</li>
+<li>What are CIs</li>
+<li>Why we use them</li>
+<li>Some examples of CIs</li>
+<li>A tour of a CI: terminology</li>
+<li>Units, indicators, levels, groups</li>
+</ul>
+<p>In this chapter we discuss</p>
+<p>A <em>composite indicator</em> is an aggregation of indicators which aims to measure a particular concept. Composite indicators are typically used to measure complex and multidimensional concepts which are difficult to define, and cannot be measured directly. Examples include innovation, human development, environmental performance, and so on. Composite indicators are closely related to scoreboards, which are also groups of indicators aiming to capture a concept. However, scoreboards do not aggregate indicator values. Composite indicators also usually use a hierarchical structure which breaks the concept down into elements, sometimes known as sub-pillars, pillars, sub-indexes, dimensions, and so on.</p>
+<p>The short answer is that a composite indicator is a mathematical aggregation of a set of indicators, usually aiming to measure a multidimensional concept. There are likely thousands of examples around, including:</p>
+<p>The Global Innovation Index The Human Development Index The Global Attractiveness Index The Corruption Perceptions Index …and so on.</p>
+<p>However, to better answer the question, we must first take a step back and think: what are indicators? And also – why do we use them in the first place?</p>
+<section id="indicators" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="indicators"><span class="header-section-number">1.1</span> Indicators</h2>
+<p>Most people probably have an intuitive idea of what an indicator is. If you have ever worked in or anywhere near project management, you will probably have come across “performance indicators”, or “key performance indicators” (KPIs). These are often used to judge how well a project or programme is doing, possibly against some kind of targets or benchmarks.</p>
+<p>In the world of policy making, sustainable development goals are measured by a set of over 200 indicators at the UN’s SDG Indicators Database. Many other international, governmental and policy-related organisations have dashboards of indicators tracking everything from social rights to the environment.</p>
+<p>If we search the internet for “what is an indicator” – various definitions pop up. Ignoring those relating to cars and chemistry, here are a few examples:</p>
+<p>The Collins English Dictionary defines an indicator as: “a measurement or value which gives you an idea of what something is like.” Investopedia defines indicators as “statistics used to measure current conditions as well as to forecast financial or economic trends.” Eurostat defines an indicator as “a summary measure related to a key issue or phenomenon and derived from a series of observed facts”. These definitions vary, but have a few things in common. First of all, an indicator is something measurable. Second, it is used to indicate the state of something else – the thing we are interested in.</p>
+<p>This points to a key concept: we want to measure something, but that thing is not directly measurable. So we use an indirect measurement (an indicator) to measure it. In this sense, an indicator is like a proxy measurement.</p>
+</section>
+<section id="direct-and-indirect-measures" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="direct-and-indirect-measures"><span class="header-section-number">1.2</span> Direct and indirect measures</h2>
+<p>To clarify this, think about things that are actually measurable. How long is the table? We can take a tape measure and actually measure that. Its length, in centimetres (or your favourite unit), is a direct measurement of how long it is. It is not an indicator, it is a measurement. The same goes for speed, weight, how many people there are in a room, and so on. All these things are directly measurable.</p>
+<p>Now take something more complex. How successful is a spending programme for stimulating small businesses? Unless we have an incredible machine which can somehow magically measure this, we have to face the fact that the concept of “success”, within this concept, is something more complicated that cannot be directly measured.</p>
+<p>We can however begin to think about how we might indirectly measure it. We could imagine some indicators of success: the number of small businesses, their profitability, number of employees, and so on.</p>
+<p>In short, indicators tend to deal with things that we can’t measure directly. They indicate the state or progress of the thing we are interested in. And this gives us also the why: we use indicators to measure things that we can’t otherwise measure – otherwise, of course, we would just measure them!</p>
+</section>
+<section id="multidimensionality" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="multidimensionality"><span class="header-section-number">1.3</span> Multidimensionality</h2>
+<p>We have also alluded to a second thing that indicators are associated with: multidimensionality or complexity. Think about the kind of things that indicators are used to measure: sustainable development, the impact of spending programmes, the state of the economy, and so on. All of these are complex concepts that are made up of various facets or dimensions. There is uncertainty even in their definition: they may be defined differently depending on who you ask.</p>
+<p>This means that is rarely enough to have a single indicator measuring the concept you are interested in. And this is why indicators often come in groups, sometimes called “dashboards” or “scoreboards”, where each indicator measures a different component of the whole concept.</p>
+<p>The fact is that most of the concepts that policy makers and managers are interested in are by their nature multidimensional – so indicators are a natural tool to capture them.</p>
+</section>
+<section id="composite-indicators" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="composite-indicators"><span class="header-section-number">1.4</span> Composite indicators</h2>
+<p>This finally leads us to composite indicators. A composite indicator is a mathematical aggregation of indicators into a single (composite) indicator. Often it is done by taking weighted averages of normalised indicators, possibly following a hierarchical structure. But why would we do that?</p>
+<p>The main reason is that dashboards, while useful, can often become overwhelming. Many complex concepts may require dozens of indicators to measure. This problem is especially evident when indicators are used for comparisons, such as comparing countries based on environmental performance or innovation. Comparing two countries based on a sea of indicator values can be difficult.</p>
+<p>A composite indicator helps in this regard by summarising a set of indicators into one measure. This allows quick comparisons: is country A overall doing better than country B? Which country is lagging behind in general and may need policy support? Which countries could be looked to for best practice?</p>
+<p>By providing a high-level summary of the underlying data, users can also be easily led in to explore the data set. Composite indicators should never be used instead of the underlying data, but rather to complement it. Why does country A have the highest score? Using interactive data exploration, a user can delve into the data and find out what the famous country A excels at.</p>
+<p>As a final “why”, composite indicators are much more digestible to the public, and are effective advocacy tools. The Corporate Tax Haven Index, as an example, is based on a huge database of complex legal and financial data, which would be meaningless to most people. But aggregated into an index, it clearly points to some of the main offenders in helping corporations avoid tax, and these messages are quickly picked up by the media, putting pressure on policy makers.</p>
+</section>
+<section id="wrapping-up" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="wrapping-up"><span class="header-section-number">1.5</span> Wrapping up</h2>
+<p>Composite indicators are effective tools for measuring complex (often socio-economic) concepts. There are likely thousands of examples out there in the wild.</p>
+<p>They are not without their limitations – there are many uncertainties in their definition, and by aggregating many indicators into one we unavoidably lose information. But developed carefully, and used responsibly and correctly, they can serve as an easy entry point to a complex data set, facilitate comparisons and benchmarking, and help publicise thorny issues (if advocacy is your goal).</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="doc-biblioentry">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -375,7 +337,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./index.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Welcome</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

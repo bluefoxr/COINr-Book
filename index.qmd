@@ -1,9 +1,31 @@
-# Preface {.unnumbered}
+# Welcome {.unnumbered}
 
-This is a Quarto book. Hello world.
+This online book walks you through the process of building composite indicators in R. It is centered around the [COINr package](https://bluefoxr.github.io/COINr/), but also uses other packages and tools where useful. Although this is very much an R-oriented book, it can also be used as a general guide to composite indicator construction.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+This book is the successor to my first online book: [Composite Indicator Development and Analysis in R with COINr](https://bluefoxr.github.io/COINrDoc/). Why write it again? In the first place, the first book focused on early versions of the COINr package which have now been superseded by a new syntax, so the code in the old book is outdated. Second, I wanted to include a number of new things, and tidy up the general structure of the book.
 
-```{r}
-1 + 1
-```
+In this shiny[^index-1] new version, you will find (hopefully) a more coherent guide to building composite indicators, starting right at the beginning with conceiving the conceptual framework, to initial indicator selection and data collection. We then show how to statistically analyse the data, and how to treat outliers, deal with missing data, normalise and aggregate indicators up to the index level. We will then explore how to visualise and communicate results, and how to dig into uncertainties with sensitivity analysis. Throughout the book there is a strong emphasis on transparency and reproducibility.
+
+[^index-1]: shiny, not [shiny](https://shiny.rstudio.com/)
+
+## Who is it for
+
+The main audience of this book is expected to be analysts and researchers working for international organisations and NGOs, who are often the main producers of composite indicators. But those coming from an academic background, and also those who use indicators for business, may also find this useful.
+
+## What this is not
+
+This book is *not* intended to be a full guide to building composite indicators. It specifically treats the intersection of composite indicators and R. This means that while there are certainly plenty of useful tips for general composite indicator development, it does not give by any means a full (or near-full) coverage of methodology. The main focus is on the computational and data aspects of composite indicators.
+
+This is also not meant to be documentation for the COINr package, although there are certainly overlaps. The COINr package is already very [well-documented](https://bluefoxr.github.io/COINr/).
+
+## Tools
+
+It is probably clear by now that the main tool used this book is R. R is a very widely-used open-source programming language in statistics and data science, and if you are new to R [this book](https://r4ds.hadley.nz/) is a good place to start.
+
+Within R the main package used is [COINr](https://bluefoxr.github.io/COINr/), which is a dedicated package for developing and analysing composite indicators. But we also bring in other tools: the iCOINr package which provides interactive graphics for COINr, plotly, leaflet for interactive maps, and Shiny for apps (TODO complete list).
+
+We also incidentally use Excel, which is an important tool in any data scientist/analyst's toolbox, and anyone who thinks otherwise needs to have a serious chat with themselves. It often serves as the common denominator between professions and stakeholders and is a powerful tool in its own right.
+
+## How to use this book
+
+(TODO complete)

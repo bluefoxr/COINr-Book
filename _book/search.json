@@ -4,12 +4,40 @@
     "href": "index.html",
     "title": "Building Composite Indicators in R",
     "section": "",
-    "text": "Preface\nThis is a Quarto book. Hello world.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome\nThis online book walks you through the process of building composite indicators in R. It is centered around the COINr package, but also uses other packages and tools where useful. Although this is very much an R-oriented book, it can also be used as a general guide to composite indicator construction.\nThis book is the successor to my first online book: Composite Indicator Development and Analysis in R with COINr. Why write it again? In the first place, the first book focused on early versions of the COINr package which have now been superseded by a new syntax, so the code in the old book is outdated. Second, I wanted to include a number of new things, and tidy up the general structure of the book.\nIn this shiny1 new version, you will find (hopefully) a more coherent guide to building composite indicators, starting right at the beginning with conceiving the conceptual framework, to initial indicator selection and data collection. We then show how to statistically analyse the data, and how to treat outliers, deal with missing data, normalise and aggregate indicators up to the index level. We will then explore how to visualise and communicate results, and how to dig into uncertainties with sensitivity analysis. Throughout the book there is a strong emphasis on transparency and reproducibility."
+  },
+  {
+    "objectID": "index.html#who-is-it-for",
+    "href": "index.html#who-is-it-for",
+    "title": "Building Composite Indicators in R",
+    "section": "Who is it for",
+    "text": "Who is it for\nThe main audience of this book is expected to be analysts and researchers working for international organisations and NGOs, who are often the main producers of composite indicators. But those coming from an academic background, and also those who use indicators for business, may also find this useful."
+  },
+  {
+    "objectID": "index.html#what-this-is-not",
+    "href": "index.html#what-this-is-not",
+    "title": "Building Composite Indicators in R",
+    "section": "What this is not",
+    "text": "What this is not\nThis book is not intended to be a full guide to building composite indicators. It specifically treats the intersection of composite indicators and R. This means that while there are certainly plenty of useful tips for general composite indicator development, it does not give by any means a full (or near-full) coverage of methodology. The main focus is on the computational and data aspects of composite indicators.\nThis is also not meant to be documentation for the COINr package, although there are certainly overlaps. The COINr package is already very well-documented."
+  },
+  {
+    "objectID": "index.html#tools",
+    "href": "index.html#tools",
+    "title": "Building Composite Indicators in R",
+    "section": "Tools",
+    "text": "Tools\nIt is probably clear by now that the main tool used this book is R. R is a very widely-used open-source programming language in statistics and data science, and if you are new to R this book is a good place to start.\nWithin R the main package used is COINr, which is a dedicated package for developing and analysing composite indicators. But we also bring in other tools: the iCOINr package which provides interactive graphics for COINr, plotly, leaflet for interactive maps, and Shiny for apps (TODO complete list).\nWe also incidentally use Excel, which is an important tool in any data scientist/analyst’s toolbox, and anyone who thinks otherwise needs to have a serious chat with themselves. It often serves as the common denominator between professions and stakeholders and is a powerful tool in its own right."
+  },
+  {
+    "objectID": "index.html#how-to-use-this-book",
+    "href": "index.html#how-to-use-this-book",
+    "title": "Building Composite Indicators in R",
+    "section": "How to use this book",
+    "text": "How to use this book\n(TODO complete)"
   },
   {
     "objectID": "intro.html",
     "href": "intro.html",
-    "title": "1  Introduction",
+    "title": "1  Foundations",
     "section": "",
     "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   },
@@ -26,5 +54,40 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "intro.html#indicators",
+    "href": "intro.html#indicators",
+    "title": "1  Foundations",
+    "section": "1.1 Indicators",
+    "text": "1.1 Indicators\nMost people probably have an intuitive idea of what an indicator is. If you have ever worked in or anywhere near project management, you will probably have come across “performance indicators”, or “key performance indicators” (KPIs). These are often used to judge how well a project or programme is doing, possibly against some kind of targets or benchmarks.\nIn the world of policy making, sustainable development goals are measured by a set of over 200 indicators at the UN’s SDG Indicators Database. Many other international, governmental and policy-related organisations have dashboards of indicators tracking everything from social rights to the environment.\nIf we search the internet for “what is an indicator” – various definitions pop up. Ignoring those relating to cars and chemistry, here are a few examples:\nThe Collins English Dictionary defines an indicator as: “a measurement or value which gives you an idea of what something is like.” Investopedia defines indicators as “statistics used to measure current conditions as well as to forecast financial or economic trends.” Eurostat defines an indicator as “a summary measure related to a key issue or phenomenon and derived from a series of observed facts”. These definitions vary, but have a few things in common. First of all, an indicator is something measurable. Second, it is used to indicate the state of something else – the thing we are interested in.\nThis points to a key concept: we want to measure something, but that thing is not directly measurable. So we use an indirect measurement (an indicator) to measure it. In this sense, an indicator is like a proxy measurement."
+  },
+  {
+    "objectID": "intro.html#direct-and-indirect-measures",
+    "href": "intro.html#direct-and-indirect-measures",
+    "title": "1  Foundations",
+    "section": "1.2 Direct and indirect measures",
+    "text": "1.2 Direct and indirect measures\nTo clarify this, think about things that are actually measurable. How long is the table? We can take a tape measure and actually measure that. Its length, in centimetres (or your favourite unit), is a direct measurement of how long it is. It is not an indicator, it is a measurement. The same goes for speed, weight, how many people there are in a room, and so on. All these things are directly measurable.\nNow take something more complex. How successful is a spending programme for stimulating small businesses? Unless we have an incredible machine which can somehow magically measure this, we have to face the fact that the concept of “success”, within this concept, is something more complicated that cannot be directly measured.\nWe can however begin to think about how we might indirectly measure it. We could imagine some indicators of success: the number of small businesses, their profitability, number of employees, and so on.\nIn short, indicators tend to deal with things that we can’t measure directly. They indicate the state or progress of the thing we are interested in. And this gives us also the why: we use indicators to measure things that we can’t otherwise measure – otherwise, of course, we would just measure them!"
+  },
+  {
+    "objectID": "intro.html#multidimensionality",
+    "href": "intro.html#multidimensionality",
+    "title": "1  Foundations",
+    "section": "1.3 Multidimensionality",
+    "text": "1.3 Multidimensionality\nWe have also alluded to a second thing that indicators are associated with: multidimensionality or complexity. Think about the kind of things that indicators are used to measure: sustainable development, the impact of spending programmes, the state of the economy, and so on. All of these are complex concepts that are made up of various facets or dimensions. There is uncertainty even in their definition: they may be defined differently depending on who you ask.\nThis means that is rarely enough to have a single indicator measuring the concept you are interested in. And this is why indicators often come in groups, sometimes called “dashboards” or “scoreboards”, where each indicator measures a different component of the whole concept.\nThe fact is that most of the concepts that policy makers and managers are interested in are by their nature multidimensional – so indicators are a natural tool to capture them."
+  },
+  {
+    "objectID": "intro.html#composite-indicators",
+    "href": "intro.html#composite-indicators",
+    "title": "1  Foundations",
+    "section": "1.4 Composite indicators",
+    "text": "1.4 Composite indicators\nThis finally leads us to composite indicators. A composite indicator is a mathematical aggregation of indicators into a single (composite) indicator. Often it is done by taking weighted averages of normalised indicators, possibly following a hierarchical structure. But why would we do that?\nThe main reason is that dashboards, while useful, can often become overwhelming. Many complex concepts may require dozens of indicators to measure. This problem is especially evident when indicators are used for comparisons, such as comparing countries based on environmental performance or innovation. Comparing two countries based on a sea of indicator values can be difficult.\nA composite indicator helps in this regard by summarising a set of indicators into one measure. This allows quick comparisons: is country A overall doing better than country B? Which country is lagging behind in general and may need policy support? Which countries could be looked to for best practice?\nBy providing a high-level summary of the underlying data, users can also be easily led in to explore the data set. Composite indicators should never be used instead of the underlying data, but rather to complement it. Why does country A have the highest score? Using interactive data exploration, a user can delve into the data and find out what the famous country A excels at.\nAs a final “why”, composite indicators are much more digestible to the public, and are effective advocacy tools. The Corporate Tax Haven Index, as an example, is based on a huge database of complex legal and financial data, which would be meaningless to most people. But aggregated into an index, it clearly points to some of the main offenders in helping corporations avoid tax, and these messages are quickly picked up by the media, putting pressure on policy makers."
+  },
+  {
+    "objectID": "intro.html#wrapping-up",
+    "href": "intro.html#wrapping-up",
+    "title": "1  Foundations",
+    "section": "1.5 Wrapping up",
+    "text": "1.5 Wrapping up\nComposite indicators are effective tools for measuring complex (often socio-economic) concepts. There are likely thousands of examples out there in the wild.\nThey are not without their limitations – there are many uncertainties in their definition, and by aggregating many indicators into one we unavoidably lose information. But developed carefully, and used responsibly and correctly, they can serve as an easy entry point to a complex data set, facilitate comparisons and benchmarking, and help publicise thorny issues (if advocacy is your goal)."
   }
 ]
