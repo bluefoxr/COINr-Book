@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "Building Composite Indicators in R"
+  author: "William Becker"
+  date: "06/03/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

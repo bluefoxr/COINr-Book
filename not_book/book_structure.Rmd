@@ -1,0 +1,154 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Book structure.
+
+# Index
+
+This is basically the introduction to the book.
+
+- What is a composite indicator (brief)
+- What the book covers (practical non-exhaustive guide)
+- Who book is for: what you need to know first
+- About the book: how it is made and the underlying code
+- Tools used in the book (COINr, R, packages, etc)
+- How to use the book: outline of chapters
+
+# Foundations
+
+- What are indicators
+- What are CIs
+- Why we use them
+- Some examples of CIs
+
+- A tour of a CI: terminology
+- Units, indicators, levels, groups
+
+# Concept sketching
+
+- Conceptual framework (see blog post)
+- Initial indicator selection (see blog post). At this stage based on qualitative criteria.
+
+# Data collection
+
+- Where to find data
+- Use of APIs (UN, Eurostat, UNESCO, World Bank, etc...)
+- Cleaning and storing
+
+# COINr and coins
+
+- What is COINr
+- Why COINr
+- Can also analyse before COINr if needed (many COINr funcs work on dfs etc)
+- Formatting data for COINr
+- Creating a coin
+- Exploring the coin + why coins
+
+# Initial analysis
+
+- Structure and effective weights
+- Indicator analysis (by indicator, tables)
+- Distribution plots
+- Initial correlation analysis
+- Adding and removing indicators based on criteria, balanced against conceptual.
+- Rinse and repeat
+
+# Denomination
+
+- What it is
+- Which by what?
+- Be careful
+
+# Missing data
+
+- Missing data by column, by row or both
+- Unit screening
+- Imputation
+- Using more sophisticated imputation methods
+- Maybe some visualisations to suggest from other packages
+
+# Outlier treatment
+
+- What
+- Why (and when not to)
+- How
+- Alternatives: rank normalisation, other aggregation methods
+
+# Normalisation
+
+- What and why
+- Directionality
+- Nonlinear and linear transformations
+- Properties wrt outliers
+- Mixing normalisation approaches
+
+# Aggregation
+
+- What and why
+- Note about weights
+- Basic theory
+- How
+- Hooking up Compind
+
+# Weighting
+
+- What and why
+- Participatory vs auto
+- How in COINr
+
+# Viewing results
+
+- What are results?
+- Tables and heatmaps
+- Bar charts
+- Maps (using plotly and leaflet)
+
+# Unit reports
+
+- Concept of zooming in on units
+- Specific plots
+- Strengths and weaknesses
+- Automatic reporting
+
+# Adjustments and comparisons
+
+- Why and the general idea
+- Regeneration of coins
+- Adjustments to coins
+- Comparisons
+
+# Sensitivity analysis
+
+- Theory
+- Simple SA
+- Steps
+- COINr example
+- Interpret results and what to do next
+- Removing indicators
+
+# Panel data
+
+- What is
+- How
+- Basically, same as normal, but with some special considerations
+
+# Communicating
+
+- Data visualisations: Shiny, JS, etc
+- Messages and infographics
+- Sensitivities (political, stakeholder)
+
+# Tips and best practices
+
+- Reproducibility
+- Cleaning data via scripts
+- Metadata (source, etc)
+- Transparency: use of Git (further reason to use code)
+- Building consensus
+- Structuring work: use of Rmd or Quarto
+
+# Other tools
+
+- Other ways to build CIs (Excel, etc.)
